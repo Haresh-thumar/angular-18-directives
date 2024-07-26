@@ -2,6 +2,7 @@ import {
   Directive,
   ElementRef,
   HostListener,
+  inject,
   Input,
   OnInit,
   Renderer2,
@@ -13,6 +14,10 @@ import { NgControl } from '@angular/forms';
   standalone: true,
 })
 export class AlphaNumSpaceTrimDirective implements OnInit {
+  private el = inject(ElementRef);
+  private renderer = inject(Renderer2);
+  private control = inject(NgControl);
+
   // Make the input property optional with the `?` operator
   @Input() appAlphaNumSpaceTrim?: number;
   private regex: RegExp = new RegExp(/^[a-zA-Z0-9 ]*$/);
@@ -25,12 +30,6 @@ export class AlphaNumSpaceTrimDirective implements OnInit {
     'ArrowRight',
     'Delete',
   ];
-
-  constructor(
-    private el: ElementRef,
-    private renderer: Renderer2,
-    private control: NgControl
-  ) {}
 
   ngOnInit() {
     if (this.appAlphaNumSpaceTrim !== undefined) {

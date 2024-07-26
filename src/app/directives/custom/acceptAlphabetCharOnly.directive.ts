@@ -1,4 +1,10 @@
-import { Directive, ElementRef, HostListener, Input } from '@angular/core';
+import {
+  Directive,
+  ElementRef,
+  HostListener,
+  inject,
+  Input,
+} from '@angular/core';
 import { NgControl } from '@angular/forms';
 
 @Directive({
@@ -6,10 +12,11 @@ import { NgControl } from '@angular/forms';
   standalone: true,
 })
 export class AlphabeticOnlyDirective {
+  private el = inject(ElementRef);
+  private control = inject(NgControl);
+
   // Input property to set max length
   @Input('acceptAlphabetCharOnly') maxLength?: number;
-
-  constructor(private el: ElementRef, private control: NgControl) {}
 
   // Listen for input changes
   @HostListener('input', ['$event']) onInputChange(event: Event) {

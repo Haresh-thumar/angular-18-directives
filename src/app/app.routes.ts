@@ -7,9 +7,11 @@ import { AppCustomNgSwitchComponent } from './components/structural-compo/custom
 import { AppAcceptAlphabetCharOnlyComponent } from './components/custom-compo/acceptAlphabetCharOnly.component';
 import { AppAlphaNumSpaceTrimComponent } from './components/custom-compo/alphanumericSpaceTrim.component';
 import { AppNumFloatLengthSetComponent } from './components/custom-compo/numFloatLengthSet.component';
+import { appInputTrimComponent } from './components/custom-compo/inputTrim.component';
+import { AppOnlyNumberAllowComponent } from './components/custom-compo/onlyNumberAllow.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'appMaxLength', pathMatch: 'full' },
+  { path: '', redirectTo: 'onlyNumberAllow', pathMatch: 'full' },
 
   /*---------------------------------------------------------------------------
                               Structural Directive
@@ -36,4 +38,6 @@ export const routes: Routes = [
     component: AppAlphaNumSpaceTrimComponent,
   },
   { path: 'appMaxLength', component: AppNumFloatLengthSetComponent },
+  { path: 'inputTrim', component: appInputTrimComponent },
+  { path: 'onlyNumberAllow', component: AppOnlyNumberAllowComponent },
 ];

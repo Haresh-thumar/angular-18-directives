@@ -21,6 +21,7 @@ import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 })
 export class NumFloatLengthSetDirective implements ControlValueAccessor {
   private el = inject(ElementRef<HTMLInputElement>);
+
   @Input() appNumFloatLengthSet?: number;
   @Input() setFloatDigit?: number;
 
