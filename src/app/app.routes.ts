@@ -12,9 +12,11 @@ import { AppOnlyNumberAllowComponent } from './components/custom-compo/onlyNumbe
 import { AppInputMinLengthComponent } from './components/custom-compo/inputMinLength.component';
 import { appUpparCaseComponent } from './components/custom-compo/upperCase.component';
 import { appToLowercaseComponent } from './components/custom-compo/lowercase.component';
+import { appAutoFocusComponent } from './components/custom-compo/autoFocus.component';
+import { AppHighlightSearchComponent } from './components/custom-compo/highlightSearch.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'lowercase', pathMatch: 'full' },
+  { path: '', redirectTo: 'highlightSearch', pathMatch: 'full' },
 
   /*---------------------------------------------------------------------------
                               Structural Directive
@@ -46,4 +48,6 @@ export const routes: Routes = [
   { path: 'inputMinLength', component: AppInputMinLengthComponent },
   { path: 'upparCase', component: appUpparCaseComponent },
   { path: 'lowercase', component: appToLowercaseComponent },
+  { path: 'autoFocus', component: appAutoFocusComponent },
+  { path: 'highlightSearch', component: AppHighlightSearchComponent },
 ];
