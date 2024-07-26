@@ -15,9 +15,10 @@ import { appToLowercaseComponent } from './components/custom-compo/lowercase.com
 import { appAutoFocusComponent } from './components/custom-compo/autoFocus.component';
 import { AppHighlightSearchComponent } from './components/custom-compo/highlightSearch.component';
 import { AppInputMaskComponent } from './components/custom-compo/inputMask.component';
+import { appDisableRightClickComponent } from './components/custom-compo/disableRightClick.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'inputMask', pathMatch: 'full' },
+  { path: '', redirectTo: 'disableRightClick', pathMatch: 'full' },
 
   /*---------------------------------------------------------------------------
                               Structural Directive
@@ -52,4 +53,5 @@ export const routes: Routes = [
   { path: 'autoFocus', component: appAutoFocusComponent },
   { path: 'highlightSearch', component: AppHighlightSearchComponent },
   { path: 'inputMask', component: AppInputMaskComponent },
+  { path: 'disableRightClick', component: appDisableRightClickComponent },
 ];
