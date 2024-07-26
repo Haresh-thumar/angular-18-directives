@@ -5,9 +5,10 @@ import { AppCustomNgStyleComponent } from './components/attribute-compo/customNg
 import { AppCustomNgClassComponent } from './components/attribute-compo/customNgClass.component';
 import { AppCustomNgSwitchComponent } from './components/structural-compo/customNgSwitch.component';
 import { AppAcceptAlphabetCharOnlyComponent } from './components/custom-compo/acceptAlphabetCharOnly.component';
+import { AppAlphaNumSpaceTrimComponent } from './components/custom-compo/alphanumericSpaceTrim.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'acceptAlphabetCharOnly', pathMatch: 'full' },
+  { path: '', redirectTo: 'alphaNumSpaceTrim', pathMatch: 'full' },
 
   /*---------------------------------------------------------------------------
                               Structural Directive
@@ -28,5 +29,9 @@ export const routes: Routes = [
   {
     path: 'acceptAlphabetCharOnly',
     component: AppAcceptAlphabetCharOnlyComponent,
+  },
+  {
+    path: 'alphaNumSpaceTrim',
+    component: AppAlphaNumSpaceTrimComponent,
   },
 ];
