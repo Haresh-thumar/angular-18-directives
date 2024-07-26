@@ -8,7 +8,7 @@ import { OnlyNumberAllowDirective } from '../../directives/custom/onlyNumberAllo
   imports: [ReactiveFormsModule, OnlyNumberAllowDirective],
   template: `
     <div class="three">
-      <h1 class="heading">MaxLength Number with Decimal Directive</h1>
+      <h1 class="heading">Only Numeric Value Allow Directive</h1>
     </div>
 
     <div class="card p-3 mb-4">

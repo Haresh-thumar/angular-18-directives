@@ -5,17 +5,17 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { InputTrimDirective } from '../../directives/custom/input-trim.directive';
-import { JsonPipe, NgClass } from '@angular/common';
+import { JsonPipe } from '@angular/common';
+import { UpperCaseInputDirective } from '../../directives/custom/uppercase.directive';
 
 @Component({
-  selector: 'app-inputTrim',
+  selector: 'app-upparCase',
   standalone: true,
-  imports: [ReactiveFormsModule, InputTrimDirective, JsonPipe, NgClass],
+  imports: [ReactiveFormsModule, UpperCaseInputDirective, JsonPipe],
   template: `
     <div class="container">
       <div class="three">
-        <h1 class="heading">Input Trim Directive</h1>
+        <h1 class="heading">UpparCase Directive</h1>
       </div>
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="mb-3">
@@ -25,11 +25,7 @@ import { JsonPipe, NgClass } from '@angular/common';
             formControlName="username"
             class="form-control"
             placeholder="Enter your username"
-            appInputTrim
-            [ngClass]="{
-              'is-invalid':
-                form.get('username')?.invalid && form.get('username')?.touched
-            }"
+            appToUppercase
           />
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
@@ -52,7 +48,7 @@ import { JsonPipe, NgClass } from '@angular/common';
     `,
   ],
 })
-export class appInputTrimComponent {
+export class appUpparCaseComponent {
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {

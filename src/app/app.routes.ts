@@ -9,9 +9,12 @@ import { AppAlphaNumSpaceTrimComponent } from './components/custom-compo/alphanu
 import { AppNumFloatLengthSetComponent } from './components/custom-compo/numFloatLengthSet.component';
 import { appInputTrimComponent } from './components/custom-compo/inputTrim.component';
 import { AppOnlyNumberAllowComponent } from './components/custom-compo/onlyNumberAllow.component';
+import { AppInputMinLengthComponent } from './components/custom-compo/inputMinLength.component';
+import { appUpparCaseComponent } from './components/custom-compo/upperCase.component';
+import { appToLowercaseComponent } from './components/custom-compo/lowercase.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: 'onlyNumberAllow', pathMatch: 'full' },
+  { path: '', redirectTo: 'lowercase', pathMatch: 'full' },
 
   /*---------------------------------------------------------------------------
                               Structural Directive
@@ -40,4 +43,7 @@ export const routes: Routes = [
   { path: 'appMaxLength', component: AppNumFloatLengthSetComponent },
   { path: 'inputTrim', component: appInputTrimComponent },
   { path: 'onlyNumberAllow', component: AppOnlyNumberAllowComponent },
+  { path: 'inputMinLength', component: AppInputMinLengthComponent },
+  { path: 'upparCase', component: appUpparCaseComponent },
+  { path: 'lowercase', component: appToLowercaseComponent },
 ];

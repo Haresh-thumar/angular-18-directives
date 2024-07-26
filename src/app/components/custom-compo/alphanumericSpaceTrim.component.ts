@@ -8,7 +8,7 @@ import { AlphaNumSpaceTrimDirective } from '../../directives/custom/alphanumeric
   imports: [ReactiveFormsModule, AlphaNumSpaceTrimDirective],
   template: `
     <div class="three">
-      <h1 class="heading">AlphaNumSpaceTrim Directive with Reactive Forms</h1>
+      <h1 class="heading">AlphaNumSpaceTrim Directive</h1>
     </div>
 
     <div class="card p-3 mb-4">

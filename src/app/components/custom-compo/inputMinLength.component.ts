@@ -5,18 +5,19 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { InputTrimDirective } from '../../directives/custom/input-trim.directive';
 import { JsonPipe, NgClass } from '@angular/common';
+import { InputMinLengthDirective } from '../../directives/custom/inputMinLength.directive';
 
 @Component({
-  selector: 'app-inputTrim',
+  selector: 'app-inputMinLength',
   standalone: true,
-  imports: [ReactiveFormsModule, InputTrimDirective, JsonPipe, NgClass],
+  imports: [ReactiveFormsModule, InputMinLengthDirective, JsonPipe, NgClass],
   template: `
     <div class="container">
       <div class="three">
-        <h1 class="heading">Input Trim Directive</h1>
+        <h1 class="heading">Input MinLength Directive</h1>
       </div>
+
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="mb-3">
           <label for="username" class="form-label">Username:</label>
@@ -25,12 +26,16 @@ import { JsonPipe, NgClass } from '@angular/common';
             formControlName="username"
             class="form-control"
             placeholder="Enter your username"
-            appInputTrim
+            [appMinLength]="5"
             [ngClass]="{
               'is-invalid':
                 form.get('username')?.invalid && form.get('username')?.touched
             }"
           />
+
+          @if(form.get('username')?.errors?.['appMinLength']){
+          <div class="invalid-feedback">please enter minimum 5 character</div>
+          }
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
@@ -52,7 +57,7 @@ import { JsonPipe, NgClass } from '@angular/common';
     `,
   ],
 })
-export class appInputTrimComponent {
+export class AppInputMinLengthComponent {
   form: FormGroup;
 
   constructor(private fb: FormBuilder) {
@@ -65,6 +70,8 @@ export class appInputTrimComponent {
     this.form.markAllAsTouched();
     if (this.form.valid) {
       console.log('Form Submitted:', this.form.value);
+    } else {
+      console.log('Form is invalid');
     }
   }
 }
